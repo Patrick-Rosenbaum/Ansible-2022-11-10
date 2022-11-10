@@ -1,0 +1,26 @@
+---
+# Aufgabe 2 von oben nach unten a, b, c, d, e. Screenshots zeigen die einzlenen Plays in Aktion
+# Kommentare hinter den Zeilen werden mir als fehler Angezeigt,
+# deshalb schreibe ich hier oben es als vermerk hin.
+- name: task 1
+  hosts: vmdemo
+  tasks:
+    - debug:
+        msg:
+          - "Hello World!"
+      when: Greetings == true
+            Greetings != false
+            Greetings == true and x > 5
+            Greetings == true or farewell == false
+
+
+- name: task 2
+  hosts: vmdemo
+  tasks: 
+    - debug:
+        msg:
+          - "Goodbye, World!"
+      when: farewell == true
+            farewell != false
+            farewell != false and y < 50 
+            Greetings != true or farewell == true 
