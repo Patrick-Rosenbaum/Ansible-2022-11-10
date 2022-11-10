@@ -1,0 +1,19 @@
+---
+- name: loops
+  hosts: vmdemo
+  tasks:
+    - name: loop 1
+      user:
+        name: "{{item}}"
+      loop:
+        - UserX
+        - UserY
+        - UserZ
+      
+    - name: loop 2
+      user:
+        name: "{{item}}"
+      loop:
+        - "{{user1}}"
+        - "{{user2}}"
+        - "{{user3}}"
