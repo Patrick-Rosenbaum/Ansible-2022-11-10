@@ -1,0 +1,26 @@
+---
+- name: testdummy
+  hosts: vmdemo
+  become: yes
+  vars:
+    user1: Marcus
+    user2: Dilbag
+    user3: Deepa
+  tasks:
+    - user:
+        name: "{{user1}}"
+        uid: "{{uid1}}"
+        password_lock: "{{password}}"
+      register: ergebnis1
+    - user:
+        name: "{{user2}}"
+        uid: "{{uid2}}"
+        password_lock: "{{password}}"
+      register: ergebnis2
+    - user:
+        name: "{{user3}}"
+        uid: "{{uid3}}"
+        password_lock: "{{password}}"
+      register: ergebnis3
+    - debug:
+        msg: "{{ergebnis1}}, {{ergebnis2}}, {{ergebnis3}}"
